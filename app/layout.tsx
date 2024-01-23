@@ -1,3 +1,9 @@
+import '@/app/ui/global.css';
+import { inter } from '@/app/ui/fonts';
+import localFont from 'next/font/local';
+
+const myFont = localFont({ src: '../public/fonts/GmarketSansTTFMedium.ttf' });
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${myFont.className} antialiased`}>{children}</body>
     </html>
   );
 }
